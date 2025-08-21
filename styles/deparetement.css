@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel > .card {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 200px;
+  background: #222;
+  border-radius: 10px;
+  padding: 15px;
+  scroll-snap-align: start;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: #f44336;
+}
+.vertical-carousel {
+  position: relative;
+  height: 300px;  /* adjust height as needed */
+  overflow: hidden;
+  width: 300px; /* adjust width as needed */
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background-color: #141414;
+  color: white;
+  padding: 10px;
+}
+
+.carousel-card {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.carousel-card.active {
+  opacity: 1;
+  position: relative;
+}
+
+.carousel-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.carousel-card p {
+  font-size: 1rem;
+  max-height: 120px;
+  overflow: hidden;
+}
+
+.carousel-card small {
+  color: #ccc;
+  font-size: 0.8rem;
+  margin-top: 10px;
+  display: block;
+}
